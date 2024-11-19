@@ -49,7 +49,7 @@ def generar_primo(rango_inf:int, rango_sup:int)->int: #no le puse valor de retor
         raise ValueError(f"Error: {e}")
 
     
-def inverso_modular(a:int, b:int)->tuple:
+def inverso_modular(a:int, b:int)->int:
     x = 0
     y = 1
     u = b
@@ -70,7 +70,7 @@ def inverso_modular(a:int, b:int)->tuple:
     
     return x % b
 
-def generar_llaves(rango_inf:int, rango_sup:int):
+def generar_llaves(rango_inf:int, rango_sup:int)->tuple:
     a = generar_primo(rango_inf, rango_sup)
     b = generar_primo(rango_inf, rango_sup)
 
