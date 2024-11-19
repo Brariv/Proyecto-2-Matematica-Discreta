@@ -48,8 +48,10 @@ def generar_primo(rango_inf:int, rango_sup:int)->int: #no le puse valor de retor
     except Exception as e:
         raise ValueError(f"Error: {e}")
 
+
+
     
-def inverso_modular(a:int, b:int)->int:
+def inverso_modular(a:int, b:int):
     x = 0
     y = 1
     u = b
