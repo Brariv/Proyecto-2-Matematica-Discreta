@@ -10,9 +10,9 @@ def encriptardor(mensaje:int, llaves:tuple):
 
 def rsaFunction(mensaje:int):
 
-    inferior = 200
+    inferior = 329
     
-    superior = 300
+    superior = 923
 
     llaves = generar_llaves(inferior,superior)
 

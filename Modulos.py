@@ -2,7 +2,6 @@ import random as rd
 
 
 def mcd(x:int, y:int)->int:
-    #El numero mayor es asignado como a y el menor como b
     if x < y: 
         a = y
         b = x
@@ -20,17 +19,20 @@ def mcd(x:int, y:int)->int:
 
 
 def criba(n:int)->list:
-    primes = []
-    not_primes = set()
+    primes = [] #Vamos a crear una lista donde vamos a meter los primos
+    not_primes = set() #tambien un set, para tener todo los numeros de la criba
 
-    for i in range(2, n+1):
-        if i in not_primes:
+    for i in range(2, n+1):#vamos a empezar desde el primer primo, hasta el limite superior, incluido con el
+
+        if i in not_primes: #Primero mira si no esta en la lista de la criba
             continue
 
-        for j in range(i*2, n+1, i):
-            not_primes.add(j)
+        # Agarramos desde el primer multiplo, hasta el numero limite,
+        # Y empieza a a iterar, de multiplo en multiplo
+        for j in range(i*2, n+1, i): 
+            not_primes.add(j) # pone el numero
 
-        primes.append(i)
+        primes.append(i) # mete el numero, mientras no este en primos
 
     return primes
 
@@ -39,11 +41,11 @@ def criba(n:int)->list:
 #Mario, no me pegue porfavor
 def generar_primo(rango_inf:int, rango_sup:int)->int: #no le puse valor de retorno, porque va a devolver o un None o el numero
     try:
-        cribUntilHigher = criba(rango_sup) #genera hasta el primo mas cerca al higher bound
+        cribHastaSup = criba(rango_sup) #genera hasta el primo mas cerca al higher bound
         
-        cribFromLower = [prime for prime in cribUntilHigher if prime >= rango_inf] #quitar todo los valores mas bajos que el limite inferior
+        cribDesdeInf = [prime for prime in cribHastaSup if prime >= rango_inf] #quitar todo los valores mas bajos que el limite inferior
 
-        return cribFromLower[rd.randint(0,len(cribFromLower)-1)] #retorna desde el indice 0 al tamano de la cribFromLower
+        return cribDesdeInf[rd.randint(0,len(cribDesdeInf)-1)] #retorna desde el indice 0 al tamano de la cribFromLower
 
     except Exception as e:
         raise ValueError(f"Error: {e}")
