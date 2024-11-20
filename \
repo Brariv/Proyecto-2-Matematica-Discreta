@@ -17,11 +17,11 @@ def rsaFunction(mensaje:int) -> None:
     llaves:tuple = generar_llaves(inferior,superior)
 
     encriptado:int = encriptador(mensaje,llaves[0])
-    print(f"encriptado: {encriptado}\n")
+    print(f"encriptado: {encriptado}")
         
     descriptado:int = encriptador(encriptado,llaves[1])
 
-    print(f"desincriptado: {descriptado}\n")
+    print(f"desincriptado: {descriptado}")
 
 
 def stringMessage(mensaje:str) -> None:

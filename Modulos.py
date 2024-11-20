@@ -48,6 +48,7 @@ def generar_primo(rango_inf:int, rango_sup:int)->int: #no le puse valor de retor
         return cribDesdeInf[rd.randint(0,len(cribDesdeInf)-1)] #retorna desde el indice 0 al tamano de la cribFromLower
 
     except Exception as e:
+        # Si 
         raise ValueError(f"Error: {e}")
 
 
