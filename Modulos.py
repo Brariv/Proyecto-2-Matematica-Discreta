@@ -53,7 +53,8 @@ def generar_primo(rango_inf:int, rango_sup:int)->int: #no le puse valor de retor
 
 
 
-    
+   
+# Brandon si le sabe
 def inverso_modular(a:int, b:int):
     x = 0
     y = 1
@@ -75,6 +76,7 @@ def inverso_modular(a:int, b:int):
     
     return x % b
 
+
 def generar_llaves(rango_inf:int, rango_sup:int)->tuple:
     a = generar_primo(rango_inf, rango_sup)
     b = generar_primo(rango_inf, rango_sup)
@@ -84,8 +86,12 @@ def generar_llaves(rango_inf:int, rango_sup:int)->tuple:
     if n < 256:
         return generar_llaves(rango_inf, rango_sup)
     else: 
+        #Generamos el totiente
         euler = (a-1)*(b-1)
+        #tambien un numero primero cualquiera
         e = generar_primo(rango_inf, rango_sup)
+        #Sacamos el inverso del numero primero para tener un numero
+        #Para tener el valor que quite el encriptado
         d = inverso_modular(e, euler)
         if d == None:
             return generar_llaves(rango_inf, rango_sup)

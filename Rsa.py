@@ -21,7 +21,7 @@ def rsaFunction(mensaje:int) -> None:
         
     descriptado:int = encriptador(encriptado,llaves[1])
 
-    print(f"desincriptado: {descriptado}\n")
+    print(f"desincriptado: {descriptado}n")
 
 
 def stringMessage(mensaje:str) -> None:
