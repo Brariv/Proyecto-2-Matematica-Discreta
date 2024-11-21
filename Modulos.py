@@ -29,6 +29,7 @@ def criba(n:int)->list:
 
         # Agarramos desde el primer multiplo, hasta el numero limite,
         # Y empieza a a iterar, de multiplo en multiplo
+        # Lit, algoritmo que nos dio mario
         for j in range(i*2, n+1, i): 
             not_primes.add(j) # pone el numero
 
@@ -84,6 +85,8 @@ def generar_llaves(rango_inf:int, rango_sup:int)->tuple:
     n = a * b
 
     if n < 256:
+        return generar_llaves(rango_inf, rango_sup)
+    if a == b:
         return generar_llaves(rango_inf, rango_sup)
     else: 
         #Generamos el totiente

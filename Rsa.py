@@ -8,11 +8,7 @@ def encriptador(mensaje:int, llaves:tuple) -> int:
     return pow(mensaje, a, b)
 
 
-def rsaFunction(mensaje:int) -> None:
-
-    inferior:int = 329
-    
-    superior:int = 923
+def rsaFunction(mensaje:int, inferior:int, superior:int) -> None:
 
     llaves:tuple = generar_llaves(inferior,superior)
 
@@ -21,7 +17,7 @@ def rsaFunction(mensaje:int) -> None:
         
     descriptado:int = encriptador(encriptado,llaves[1])
 
-    print(f"desincriptado: {descriptado}n")
+    print(f"desincriptado: {descriptado}\n")
 
 
 def stringMessage(mensaje:str) -> None:
